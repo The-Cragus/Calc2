@@ -1,0 +1,59 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px;
+    width: 50%;
+    table-layout: fixed;
+}
+
+.display {
+    font-size: 35px;
+    height: 40px;
+}
+
+#outerShell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+}
+
+#innerShell {
+    border: 5px solid black;
+    height: 360px;
+    width: 275px;
+} 
+
+#buttonShell {
+    margin: 10px;
+    margin-top: 15px;
+}
+
+#rowOne {
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+}
+
+#rowTwo {
+    display: flex;
+}
+
+#rowThree {
+    display: flex;
+}
+
+#rowFour {
+    display: flex;
+}
+
+#rowFive {
+    display: flex; 
+}
+
+
