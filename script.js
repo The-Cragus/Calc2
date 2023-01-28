@@ -24,7 +24,8 @@ function operate(operator, a, b) {
     b = displayValue;
 
     if (operator === 1) {
-        return add(+a, +b);
+        //Updates firstNumber to store intial equation
+        return firstNumber = add(+a, +b);
     }
     if (operator === 2) {
         return sub(+a, +b);
@@ -46,108 +47,140 @@ function operate(operator, a, b) {
 //Event Listeners for Numbered Buttons
 const zero = document.querySelector('.zero');
 zero.addEventListener('click', () => {
-    displayValue = '0';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    //resets the display field
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '0';
+    displayArea.textContent += '0';
 });
 
 const one = document.querySelector('.one');
 one.addEventListener('click', () => {
-    displayValue = '1';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    displayValue += '1';
+    displayArea.textContent += '1';
+
+    //updates display to have the current total of the equation
+    // if(operator > 0) {
+    //     displayArea.textContent = operate(operator);
+    // }
+   
 });
 
 const two = document.querySelector('.two');
 two.addEventListener('click', () => {
-    displayValue = '2';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '2';
+    displayArea.textContent += '2';
 });
 
 const three = document.querySelector('.three');
 three.addEventListener('click', () => {
-    displayValue = '3';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '3';
+    displayArea.textContent += '3';
 });
 
 const four = document.querySelector('.four');
 four.addEventListener('click', () => {
-    displayValue = '4';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '4';
+    displayArea.textContent += '4';
 });
 
 const five = document.querySelector('.five');
 five.addEventListener('click', () => {
-    displayValue = '5';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '5';
+    displayArea.textContent += '5';
 });
 
 const six = document.querySelector('.six');
 six.addEventListener('click', () => {
-    displayValue = '6';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '6';
+    displayArea.textContent += '6';
 });
 
 const seven = document.querySelector('.seven');
 seven.addEventListener('click', () => {
-    displayValue = '7';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '7';
+    displayArea.textContent += '7';
 });
 
 const eight = document.querySelector('.eight');
 eight.addEventListener('click', () => {
-    displayValue = '8';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '8';
+    displayArea.textContent += '8';
 });
 
 const nine = document.querySelector('.nine');
 nine.addEventListener('click', () => {
-    displayValue = '9';
-    total = displayValue;
-    displayArea.textContent += displayValue;
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
+    displayValue += '9';
+    displayArea.textContent += '9';
 });
 
 //Event Listeners for operator, clear, and equal buttons
 const addition = document.querySelector('.addition');
 addition.addEventListener('click', () => {
-    firstNumber = displayArea.innerText;
+    if(firstNumber === 0){
+    firstNumber = displayValue
+    };
+    displayValue = '';
     operator = 1;
 });
 
 const subtraction = document.querySelector('.subtraction');
 subtraction.addEventListener('click', () => {
-    firstNumber = displayArea.innerText;
+    firstNumber = displayValue
+    displayValue = '';
     operator = 2;
 });
 
 const multiplication = document.querySelector('.multiplication');
 multiplication.addEventListener('click', () => {
-    firstNumber = displayArea.innerText;
+    firstNumber = displayValue
+    displayValue = '';
     operator = 3;
 });
 
 const division = document.querySelector('.division');
 division.addEventListener('click', () => {
-    firstNumber = displayArea.innerText;
+    firstNumber = displayValue
+    displayValue = '';
     operator = 4;
 });
 
 const power = document.querySelector('.power');
 power.addEventListener('click', () => {
-    firstNumber = displayArea.innerText;
+    firstNumber = displayValue
+    displayValue = '';
     operator = 5;
 });
 
 const remainder = document.querySelector('.remainder');
 remainder.addEventListener('click', () => {
-    firstNumber = displayArea.innerText; 
+    firstNumber = displayValue
+    displayValue = '';    
     operator = 6;
 });
 
