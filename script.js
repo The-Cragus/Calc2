@@ -28,19 +28,19 @@ function operate(operator, a, b) {
         return firstNumber = add(+a, +b);
     }
     if (operator === 2) {
-        return sub(+a, +b);
+        return firstNumber = sub(+a, +b);
     }
     if (operator === 3) {
-        return mult(+a, +b);
+        return firstNumber = mult(+a, +b);
     }
     if (operator === 4) {
-        return div(+a, +b);
+        return firstNumber = div(+a, +b);
     }
     if (operator === 5) {
-        return pow(+a, +b);
+        return firstNumber = pow(+a, +b);
     }
     if (operator === 6) {
-        return rem(+a, +b);
+        return firstNumber = rem(+a, +b);
     }
 };
 
@@ -52,13 +52,17 @@ zero.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '0';
-    displayArea.textContent += '0';
+    //Gets rid of leading zeros
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const one = document.querySelector('.one');
 one.addEventListener('click', () => {
+    if(displayValue === '') {
+        displayArea.textContent = '';
+    };
     displayValue += '1';
-    displayArea.textContent += '1';
+    displayArea.textContent = displayValue.replace(/^0+/, '');
 
     //updates display to have the current total of the equation
     // if(operator > 0) {
@@ -73,7 +77,7 @@ two.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '2';
-    displayArea.textContent += '2';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const three = document.querySelector('.three');
@@ -82,7 +86,7 @@ three.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '3';
-    displayArea.textContent += '3';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const four = document.querySelector('.four');
@@ -91,7 +95,7 @@ four.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '4';
-    displayArea.textContent += '4';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const five = document.querySelector('.five');
@@ -100,7 +104,7 @@ five.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '5';
-    displayArea.textContent += '5';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const six = document.querySelector('.six');
@@ -109,7 +113,7 @@ six.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '6';
-    displayArea.textContent += '6';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const seven = document.querySelector('.seven');
@@ -118,7 +122,7 @@ seven.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '7';
-    displayArea.textContent += '7';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const eight = document.querySelector('.eight');
@@ -127,7 +131,7 @@ eight.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '8';
-    displayArea.textContent += '8';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 const nine = document.querySelector('.nine');
@@ -136,12 +140,13 @@ nine.addEventListener('click', () => {
         displayArea.textContent = '';
     };
     displayValue += '9';
-    displayArea.textContent += '9';
+    displayArea.textContent = displayValue.replace(/^0+/, '')
 });
 
 //Event Listeners for operator, clear, and equal buttons
 const addition = document.querySelector('.addition');
 addition.addEventListener('click', () => {
+    //Sets intial value for firstNumber
     if(firstNumber === 0){
     firstNumber = displayValue
     };
@@ -151,35 +156,45 @@ addition.addEventListener('click', () => {
 
 const subtraction = document.querySelector('.subtraction');
 subtraction.addEventListener('click', () => {
-    firstNumber = displayValue
+    if(firstNumber === 0){
+        firstNumber = displayValue
+    };
     displayValue = '';
     operator = 2;
 });
 
 const multiplication = document.querySelector('.multiplication');
 multiplication.addEventListener('click', () => {
-    firstNumber = displayValue
+    if(firstNumber === 0){
+        firstNumber = displayValue
+    };
     displayValue = '';
     operator = 3;
 });
 
 const division = document.querySelector('.division');
 division.addEventListener('click', () => {
-    firstNumber = displayValue
+    if(firstNumber === 0){
+        firstNumber = displayValue
+    };
     displayValue = '';
     operator = 4;
 });
 
 const power = document.querySelector('.power');
 power.addEventListener('click', () => {
-    firstNumber = displayValue
+    if(firstNumber === 0){
+        firstNumber = displayValue
+    };
     displayValue = '';
     operator = 5;
 });
 
 const remainder = document.querySelector('.remainder');
 remainder.addEventListener('click', () => {
-    firstNumber = displayValue
+    if(firstNumber === 0){
+        firstNumber = displayValue
+    };
     displayValue = '';    
     operator = 6;
 });
@@ -193,6 +208,5 @@ const clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
     displayArea.textContent = 0;
     displayValue = 0;
-    total = 0;
-    operator = 0;
+    firstNumber = 0;
 });
