@@ -57,6 +57,16 @@ zero.addEventListener('click', () => {
     displayValue += '0';
     //Gets rid of leading zeros
     displayArea.textContent = displayValue.replace(/^0+/, '')
+    
+    //Brings up 0 when variables already have values
+    if(displayValue && firstNumber > 0) {
+        displayArea.textContent = 0;
+    }
+
+    //Keeps 0 from blanking out when variables don't have 0
+    if(displayValue && firstNumber == 0) {
+        displayArea.textContent = 0;
+    }
 });
 
 const one = document.querySelector('.one');
@@ -192,7 +202,7 @@ const addition = document.querySelector('.addition');
 addition.addEventListener('click', () => {
     //Sets intial value for firstNumber
     if(firstNumber === 0){
-    firstNumber = displayValue
+        firstNumber = displayValue
     };
     displayValue = '';
     operator = 1;
