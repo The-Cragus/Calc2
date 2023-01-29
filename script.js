@@ -204,6 +204,10 @@ addition.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    //Displays results from most recent equation e.g. 5 + 2 - 1 .. Would show 7 when clicking the -
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 1;
 });
@@ -213,6 +217,9 @@ subtraction.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 2;
 });
@@ -222,6 +229,9 @@ multiplication.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 3;
 });
@@ -231,6 +241,9 @@ division.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 4;
 });
@@ -240,6 +253,9 @@ power.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 5;
 });
@@ -249,6 +265,9 @@ remainder.addEventListener('click', () => {
     if(firstNumber === 0){
         firstNumber = displayValue
     };
+    if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';    
     operator = 6;
 });
