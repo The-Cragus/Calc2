@@ -55,18 +55,27 @@ zero.addEventListener('click', () => {
     //     displayArea.textContent = '';
     // }; 
     displayValue += '0';
+
     //Gets rid of leading zeros
     displayArea.textContent = displayValue.replace(/^0+/, '')
     
     //Brings up 0 when variables already have values
+
     if(displayValue && firstNumber > 0) {
         displayArea.textContent = 0;
-    }
+    } 
+    // else {
+    //     displayValue += '0';
+    // }
 
-    //Keeps 0 from blanking out when variables don't have 0
+    //Keeps 0 from blanking out when variables don't have 0 - ALSO STOPS TRAILING 0's (NOT GOOD)
+
     if(displayValue && firstNumber == 0) {
         displayArea.textContent = 0;
-    }
+    } 
+    // else {
+    //     displayValue += '0';
+    // }
 });
 
 const one = document.querySelector('.one');
@@ -202,7 +211,7 @@ const addition = document.querySelector('.addition');
 addition.addEventListener('click', () => {
     //Sets intial value for firstNumber
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     //Displays results from most recent equation e.g. 5 + 2 - 1 .. Would show 7 when clicking the -
     if(firstNumber && displayValue > 0) {
@@ -215,7 +224,7 @@ addition.addEventListener('click', () => {
 const subtraction = document.querySelector('.subtraction');
 subtraction.addEventListener('click', () => {
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
@@ -227,7 +236,7 @@ subtraction.addEventListener('click', () => {
 const multiplication = document.querySelector('.multiplication');
 multiplication.addEventListener('click', () => {
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
@@ -239,7 +248,7 @@ multiplication.addEventListener('click', () => {
 const division = document.querySelector('.division');
 division.addEventListener('click', () => {
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
@@ -251,7 +260,7 @@ division.addEventListener('click', () => {
 const power = document.querySelector('.power');
 power.addEventListener('click', () => {
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
@@ -263,7 +272,7 @@ power.addEventListener('click', () => {
 const remainder = document.querySelector('.remainder');
 remainder.addEventListener('click', () => {
     if(firstNumber === 0){
-        firstNumber = displayValue
+        firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
