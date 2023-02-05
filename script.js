@@ -57,7 +57,7 @@ zero.addEventListener('click', () => {
     }
 
     //Keeps 0 from blanking out when variables don't have 0
-    if(displayValue && firstNumber == 0) {
+    if(displayValue && firstNumber === 0) {
         displayArea.textContent = 0;
     } 
     else {
@@ -68,9 +68,14 @@ zero.addEventListener('click', () => {
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
     //Makes 0 populate the display when multiplying by 0
-    if(operator > 0) {
+    if(operator === 3) {
         displayArea.textContent = 0;
-    } 
+    }
+
+    //Produces an 'error message' if the user tries to divide by 0
+    // if(operator === 4) {
+    //     displayArea.textContent = 'Error';
+    // }
 
 });
 
