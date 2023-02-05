@@ -64,6 +64,9 @@ zero.addEventListener('click', () => {
         displayValue += '0';
     }
 
+    // Need to get 0 to display properly w/o being replaced by below
+    // if(displayValue > 0)
+
     //Gets rid of leading zeros
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
