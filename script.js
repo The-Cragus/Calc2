@@ -54,28 +54,27 @@ zero.addEventListener('click', () => {
     // if(displayValue === '') {
     //     displayArea.textContent = '';
     // }; 
-    displayValue += '0';
-
-    //Gets rid of leading zeros
-    displayArea.textContent = displayValue.replace(/^0+/, '')
+   
     
     //Brings up 0 when variables already have values
-
     if(displayValue && firstNumber > 0) {
         displayArea.textContent = 0;
     } 
-    // else {
-    //     displayValue += '0';
-    // }
+    else {
+        displayValue += '0';
+    }
 
     //Keeps 0 from blanking out when variables don't have 0 - ALSO STOPS TRAILING 0's (NOT GOOD)
-
     if(displayValue && firstNumber == 0) {
         displayArea.textContent = 0;
     } 
-    // else {
-    //     displayValue += '0';
-    // }
+    else {
+        displayValue += '0';
+    }
+
+    //Gets rid of leading zeros
+    displayArea.textContent = displayValue.replace(/^0+/, '')
+
 });
 
 const one = document.querySelector('.one');
@@ -83,14 +82,16 @@ one.addEventListener('click', () => {
     if(displayValue === '') {
         displayArea.textContent = '';
     };
-    displayValue += '1';
-    displayArea.textContent = displayValue.replace(/^0+/, '');
-
+    //Trying to get displayValue to reset after intial equation is factored in instead of adding numbers onto displayValue incorrectly
+    // if(firstNumber > 0) {
+    //     displayValue = '';
+    //     displayArea.textContent = displayValue += '1';
+    // } else {
+        displayValue += '1';
+        displayArea.textContent = displayValue.replace(/^0+/, '');
+    // }
     //updates display to have the current total of the equation
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
+    
    
 });
 
@@ -101,11 +102,6 @@ two.addEventListener('click', () => {
     };
     displayValue += '2';
     displayArea.textContent = displayValue.replace(/^0+/, '')
-
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const three = document.querySelector('.three');
@@ -116,10 +112,6 @@ three.addEventListener('click', () => {
     displayValue += '3';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const four = document.querySelector('.four');
@@ -130,10 +122,6 @@ four.addEventListener('click', () => {
     displayValue += '4';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const five = document.querySelector('.five');
@@ -144,10 +132,6 @@ five.addEventListener('click', () => {
     displayValue += '5';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const six = document.querySelector('.six');
@@ -158,10 +142,6 @@ six.addEventListener('click', () => {
     displayValue += '6';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const seven = document.querySelector('.seven');
@@ -172,10 +152,6 @@ seven.addEventListener('click', () => {
     displayValue += '7';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const eight = document.querySelector('.eight');
@@ -186,10 +162,6 @@ eight.addEventListener('click', () => {
     displayValue += '8';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 const nine = document.querySelector('.nine');
@@ -200,10 +172,6 @@ nine.addEventListener('click', () => {
     displayValue += '9';
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
-    if(operator > 0) {
-        operate(operator)
-        displayArea.textContent = displayValue;
-    }
 });
 
 //Event Listeners for operator, clear, and equal buttons
@@ -215,6 +183,10 @@ addition.addEventListener('click', () => {
     };
     //Displays results from most recent equation e.g. 5 + 2 - 1 .. Would show 7 when clicking the -
     if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
+    if(operator > 0) {
+        operate(operator)
         displayArea.textContent = firstNumber;
     }
     displayValue = '';
@@ -229,6 +201,10 @@ subtraction.addEventListener('click', () => {
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
     }
+    if(operator > 0) {
+        operate(operator)
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 2;
 });
@@ -239,6 +215,10 @@ multiplication.addEventListener('click', () => {
         firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
+    if(operator > 0) {
+        operate(operator)
         displayArea.textContent = firstNumber;
     }
     displayValue = '';
@@ -253,6 +233,10 @@ division.addEventListener('click', () => {
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
     }
+    if(operator > 0) {
+        operate(operator)
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';
     operator = 4;
 });
@@ -263,6 +247,10 @@ power.addEventListener('click', () => {
         firstNumber = displayValue.replace(/^0+/, '')
     };
     if(firstNumber && displayValue > 0) {
+        displayArea.textContent = firstNumber;
+    }
+    if(operator > 0) {
+        operate(operator)
         displayArea.textContent = firstNumber;
     }
     displayValue = '';
@@ -277,13 +265,17 @@ remainder.addEventListener('click', () => {
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
     }
+    if(operator > 0) {
+        operate(operator)
+        displayArea.textContent = firstNumber;
+    }
     displayValue = '';    
     operator = 6;
 });
 
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
-    displayArea.textContent = firstNumber;
+    displayArea.textContent = operate(operator);
 });
 
 const clear = document.querySelector('.clear');
