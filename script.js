@@ -68,7 +68,7 @@ zero.addEventListener('click', () => {
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
     //Makes 0 populate the display when multiplying by 0
-    if(operator === 3) {
+    if(operator > 0) {
         displayArea.textContent = 0;
     } 
 
