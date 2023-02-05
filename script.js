@@ -276,6 +276,7 @@ remainder.addEventListener('click', () => {
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
     displayArea.textContent = operate(operator);
+    displayValue = '';
 });
 
 const clear = document.querySelector('.clear');
