@@ -47,14 +47,6 @@ function operate(operator, a, b) {
 //Event Listeners for Numbered Buttons
 const zero = document.querySelector('.zero');
 zero.addEventListener('click', () => {
-    // if(displayValue === 0){
-    //     displayArea.textContent = 0;
-    // }
-    // //resets the display field
-    // if(displayValue === '') {
-    //     displayArea.textContent = '';
-    // }; 
-   
     
     //Brings up 0 when variables already have values
     if(displayValue && firstNumber > 0) {
@@ -64,7 +56,7 @@ zero.addEventListener('click', () => {
         displayValue += '0';
     }
 
-    //Keeps 0 from blanking out when variables don't have 0 - ALSO STOPS TRAILING 0's (NOT GOOD)
+    //Keeps 0 from blanking out when variables don't have 0
     if(displayValue && firstNumber == 0) {
         displayArea.textContent = 0;
     } 
@@ -75,6 +67,11 @@ zero.addEventListener('click', () => {
     //Gets rid of leading zeros
     displayArea.textContent = displayValue.replace(/^0+/, '')
 
+    //Makes 0 populate the display when multiplying by 0
+    if(operator === 3) {
+        displayArea.textContent = 0;
+    } 
+
 });
 
 const one = document.querySelector('.one');
@@ -82,17 +79,8 @@ one.addEventListener('click', () => {
     if(displayValue === '') {
         displayArea.textContent = '';
     };
-    //Trying to get displayValue to reset after intial equation is factored in instead of adding numbers onto displayValue incorrectly
-    // if(firstNumber > 0) {
-    //     displayValue = '';
-    //     displayArea.textContent = displayValue += '1';
-    // } else {
-        displayValue += '1';
-        displayArea.textContent = displayValue.replace(/^0+/, '');
-    // }
-    //updates display to have the current total of the equation
-    
-   
+    displayValue += '1';
+    displayArea.textContent = displayValue.replace(/^0+/, '');
 });
 
 const two = document.querySelector('.two');
@@ -185,6 +173,7 @@ addition.addEventListener('click', () => {
     if(firstNumber && displayValue > 0) {
         displayArea.textContent = firstNumber;
     }
+    //updates display to have the current total of the equation
     if(operator > 0) {
         operate(operator)
         displayArea.textContent = firstNumber;
