@@ -90,7 +90,7 @@ one.addEventListener('click', () => {
     };
     displayValue += '1';
     displayArea.textContent = displayValue.replace(/^0+/, '');
-});
+}); 
 
 const two = document.querySelector('.two');
 two.addEventListener('click', () => {
@@ -187,7 +187,7 @@ addition.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';
+    displayValue = 0;
     operator = 1;
 });
 
@@ -203,7 +203,7 @@ subtraction.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';
+    displayValue = 0;
     operator = 2;
 });
 
@@ -219,7 +219,7 @@ multiplication.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';
+    displayValue = 0;
     operator = 3;
 });
 
@@ -235,7 +235,7 @@ division.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';
+    displayValue = 0;
     operator = 4;
 });
 
@@ -251,7 +251,7 @@ power.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';
+    displayValue = 0;
     operator = 5;
 });
 
@@ -267,7 +267,7 @@ remainder.addEventListener('click', () => {
         operate(operator)
         displayArea.textContent = firstNumber;
     }
-    displayValue = '';    
+    displayValue = 0;    
     operator = 6;
 });
 
