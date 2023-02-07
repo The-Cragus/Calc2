@@ -282,12 +282,22 @@ equals.addEventListener('click', () => {
     //     }
     // }
 
+    //Keeps Display from resetting to 0 when equals is clicked various times w/ multiplication operator
+    if(firstNumber > 0 && operator === 3) {
+        displayArea.textContent = displayValue.replace(/^0+/, '');
+    }
+    
     //Keeps displayArea from blanking out if both operators are not set to certain value Ex. Just entering 12 and then equals
     if(operator === 0) {
         displayArea.textContent = displayValue.replace(/^0+/, '');
     } else {
     displayArea.textContent = operate(operator);
     displayValue = 0;
+    }
+
+    //Keeps displayValue from appearing as 0 after mutliplication when another operator is added (Ex. 25 * 2 = 50 then + 5 --- Was resetting to 0 instead of 50 due to *)
+    if(operator === 3)  {
+        operator = 0;
     }
 });
 
