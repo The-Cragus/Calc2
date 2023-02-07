@@ -295,7 +295,8 @@ equals.addEventListener('click', () => {
     displayValue = 0;
     }
 
-    //Keeps displayValue from appearing as 0 after mutliplication when another operator is added (Ex. 25 * 2 = 50 then + 5 --- Was resetting to 0 instead of 50 due to *)
+    //Keeps displayValue from appearing as 0 after mutliplication when another operator is added (Ex. 25 * 2 = 50 
+    //then + 5 --- Was resetting to 0 instead of 50 due to *)
     if(operator === 3)  {
         operator = 0;
     }
