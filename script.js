@@ -281,8 +281,14 @@ equals.addEventListener('click', () => {
     //         operator = 0;
     //     }
     // }
+
+    //Keeps displayArea from blanking out if both operators are not set to certain value Ex. Just entering 12 and then equals
+    if(operator === 0) {
+        displayArea.textContent = displayValue.replace(/^0+/, '');
+    } else {
     displayArea.textContent = operate(operator);
     displayValue = 0;
+    }
 });
 
 const clear = document.querySelector('.clear');
