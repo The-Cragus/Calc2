@@ -168,6 +168,13 @@ nine.addEventListener('click', () => {
     };
     displayValue += '9';
     displayArea.textContent = displayValue.replace(/^0+/, '')
+    
+    // if(displayValue.length >= 13) {
+    //     displayValue.slice(0, 12);
+    // } else {
+    //     displayValue += '9';
+    //     displayArea.textContent = displayValue.replace(/^0+/, '')
+    // }
 
 });
 
