@@ -52,9 +52,6 @@ zero.addEventListener('click', () => {
     if(displayValue && firstNumber > 0) {
         displayArea.textContent = 0;
     } 
-    // else {
-    //     displayArea.textContent = displayValue += '0';
-    // }
 
     //Keeps 0 from blanking out when variables don't have 0
     if(displayValue === 0) {
@@ -65,21 +62,10 @@ zero.addEventListener('click', () => {
         displayArea.textContent = displayValue.replace(/^0+/, '');
     }
 
-    // Need to get 0 to display properly w/o being replaced by below
-    // if(displayValue > 0)
-
-    //Gets rid of leading zeros
-    // displayArea.textContent = displayValue.replace(/^0+/, '');
-
     //Makes 0 populate the display when multiplying by 0
     if(operator === 3) {
         displayArea.textContent = 0;
     }
-
-    //Produces an 'error message' if the user tries to divide by 0
-    // if(operator === 4) {
-    //     displayArea.textContent = 'Error';
-    // }
 
 });
 
@@ -168,13 +154,6 @@ nine.addEventListener('click', () => {
     };
     displayValue += '9';
     displayArea.textContent = displayValue.replace(/^0+/, '')
-    
-    // if(displayValue.length >= 13) {
-    //     displayValue.slice(0, 12);
-    // } else {
-    //     displayValue += '9';
-    //     displayArea.textContent = displayValue.replace(/^0+/, '')
-    // }
 
 });
 
@@ -280,14 +259,6 @@ remainder.addEventListener('click', () => {
 
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', () => {
-
-    //Trying to fix issue with clicking equals after mult occurs and zeros out
-
-    // if(operator === 3) {
-    //     if(displayValue === '') {
-    //         operator = 0;
-    //     }
-    // }
 
     //Keeps Display from resetting to 0 when equals is clicked various times w/ multiplication operator
     if(firstNumber > 0 && operator === 3) {
