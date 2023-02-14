@@ -12,6 +12,10 @@ button {
 .display {
     font-size: 35px;
     height: 40px;
+    flex: 0 1 auto; /*important*/
+    text-overflow: ellipsis;
+    overflow:hidden;
+    min-width:0;
 }
 
 #outerShell {
